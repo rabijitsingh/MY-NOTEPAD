@@ -27,6 +27,7 @@ file = tk.Menu(main_menu,tearoff=False)
 ####edit 
 #edit icons
 
+select_all_icon = tk.PhotoImage(file='icons2/select-all.png')
 copy_icon = tk.PhotoImage(file='icons2/copy.png')
 paste_icon = tk.PhotoImage(file='icons2/paste.png')
 cut_icon = tk.PhotoImage(file='icons2/cut.png')
@@ -463,6 +464,7 @@ def find_func(event=None):
 
     find_dialogue.mainloop()
 
+edit.add_command(label='Select All',image=select_all_icon,compound=tk.LEFT, accelerator='Ctrl+A',command=lambda:text_editor.event_generate("<Control a>"))
 edit.add_command(label='Copy',image=copy_icon,compound=tk.LEFT, accelerator='Ctrl+C',command=lambda:text_editor.event_generate("<Control c>"))
 edit.add_command(label='Paste',image=paste_icon,compound=tk.LEFT, accelerator='Ctrl+V',command=lambda:text_editor.event_generate("<Control v>"))
 edit.add_command(label='Cut',image=cut_icon,compound=tk.LEFT, accelerator='Ctrl+X',command=lambda:text_editor.event_generate("<Control x>"))
